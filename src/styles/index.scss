@@ -1,0 +1,128 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'sprite';
+
+body {
+  min-width: 820px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: #{$font-base}px;
+  font-weight: normal;
+  background-color: #ffffff;
+}
+
+
+body * {
+  box-sizing: inherit;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: normal;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.btn {
+  padding: 7px 19px;
+  font-size: rem(14);
+  cursor: pointer;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  outline: 0;
+  background-color: #87b448;
+  &:hover {
+    background-color: #73993d;
+  }
+}
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 72%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+  transition: width .3s;
+}
+
+.error-modal {
+  position: absolute;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  width: 30%;
+  margin-left: -15%;
+  text-align: left;
+  border: 8px solid #73993d;
+  background-color: #ffffff;
+  .error-title {
+    padding-bottom: 8px;
+    padding-left: 10px;
+    font-size: rem(20);
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #73993d;
+  }
+  .error-description {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+  .error-status-code {
+    display: inline-block;
+    padding: 2px 5px;
+    font-weight: 600;
+    color: #555555;
+    border-radius: 5px;
+    background-color: #eeeeee;
+  }
+  .error-status-text {
+    margin: 0;
+    padding-top: 5px;
+    color: #cc0000;
+  }
+}
+
+.content-loading,
+.content-loading::after {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.content-loading {
+  position: relative;
+  margin: 60px auto;
+  font-size: 10px;
+  transform: translateZ(0);
+  animation: loading 1.1s infinite linear;
+  text-indent: -9999em;
+  border: 11px solid rgba(#000000, .1);
+  border-left-color: #aaaaaa;
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

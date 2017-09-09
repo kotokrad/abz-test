@@ -1,0 +1,14 @@
+@import 'variables';
+
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+@function rem($size) {
+  $rem-size: $size / $font-base;
+  @return #{$rem-size}rem;
+}
